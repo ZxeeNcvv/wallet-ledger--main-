@@ -1,9 +1,7 @@
 // public/supabaseClient.js
-// Change the import path to the local file you just saved
-import { createClient } from './supabase.js';
+import { createClient } from './supabase.js'; // Assuming local file import is working
 
-// ... rest of the file (ensure keys are still hardcoded and correct)
 const SUPABASE_URL = 'https://fbgihalnvblcktfpavcj.supabase.co'; 
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZiZ2loYWxudmJsY2t0ZnBhdmNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ3NDc4NDUsImV4cCI6MjA4MDMzMjg0NX0.z_Dc3nk1piYLah73541DVN3ZaL_3lpqQAUxx6agUf3o'; 
+const SUPABASE_ANON_KEY = 'YOUR_FRESHLY_COPIED_KEY_HERE'; // <--- PASTE THE NEW KEY HERE
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
