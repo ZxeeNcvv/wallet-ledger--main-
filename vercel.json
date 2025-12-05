@@ -1,14 +1,27 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "public/**", "use": "@vercel/static" },
-    { "src": "api/*.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    // 💥 ADD THIS NEW RULE 💥
-    { "src": "/src/(.*)", "dest": "/src/$1" },
-    
-    { "src": "/api/(.*)", "dest": "/api/$1.js" },
-    { "src": "/(.*)", "dest": "/public/$1" }
-  ]
+  "version": 2,
+  "builds": [
+    { 
+      "src": "public/**", 
+      "use": "@vercel/static" 
+    },
+    { 
+      "src": "api/*.js", 
+      "use": "@vercel/node" 
+    }
+  ],
+  "routes": [
+    { 
+      "src": "/api/(.*)", 
+      "dest": "/api/$1.js" 
+    },
+    { 
+      "src": "/src/(.*)", 
+      "dest": "/src/$1" 
+    },
+    { 
+      "src": "/(.*)", 
+      "dest": "/public/$1" 
+    }
+  ]
 }
