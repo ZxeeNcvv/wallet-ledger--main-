@@ -16,11 +16,15 @@ const selFrom = $('transfer-from'), selTo = $('transfer-to'), transferAmt = $('t
 const selBuyer = $('purchase-buyer'), selMerchant = $('purchase-merchant'), purchaseAmt = $('purchase-amount'), btnPurchase = $('btn-purchase');
 const ledgerList = $('ledger-list');
 
-btnSignup.onclick = async () => {
-  try {
-    await auth.signUp(emailEl.value, passwordEl.value);
-    alert('Sign-up successful. Check your email if confirmation is required.');
-  } catch (e) { alert(e.message || e); }
+btnSignin.onclick = async () => {
+  try {
+    await auth.signIn(emailEl.value, passwordEl.value);
+    await setupUI();
+  } catch (e) { 
+        // 💥 NEW: Log the error object to the console 💥
+        console.error('Sign-in failed:', e); 
+        alert(`Sign-in Failed: ${e.message || 'Unknown error. Check console for details.'}`);
+    }
 };
 
 btnSignin.onclick = async () => {
