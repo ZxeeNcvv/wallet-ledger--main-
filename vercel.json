@@ -11,17 +11,15 @@
     }
   ],
   "routes": [
-    // 1. Route API calls
     { 
       "src": "/api/(.*)", 
       "dest": "/api/$1.js" 
     },
-    // 2. Route files from the SRC folder
+
     { 
       "src": "/src/(.*)", 
       "dest": "/src/$1" 
     },
-    // 3. Catch-all: Route everything else (like / or /index.html) to the public folder
     { 
       "src": "/(.*)", 
       "dest": "/public/$1" 
